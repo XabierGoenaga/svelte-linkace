@@ -1,0 +1,28 @@
+{
+	"editor.fontSize": 18,
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.linkedEditing": true,
+	"editor.minimap.enabled": false,
+	"files.trimTrailingWhitespace": true,
+	"svelte.enable-ts-plugin": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+	"explorer.sortOrder": "filesFirst",
+	"files.exclude": {
+		"**/*.git*": true,
+		"**/*.env*": true,
+		"**/*package*": true,
+		"**/*.md*": true,
+		"**/*npm*": true,
+		"**/*pnpm*": true,
+		"**/*prettier*": true,
+		"**/*eslint*": true,
+
+		"**/.vscode": true,
+		"**/node_modules": true,
+		"**/.svelte-kit": true
+	}
+}

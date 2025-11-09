@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2025-11-09T11:20:47.908Z\n"
+"POT-Creation-Date: 2025-11-09T11:20:47.908Z\n"
+
+#: src/routes/+page.svelte
+msgid "Error"
+msgstr "Error"
+
+#: src/routes/+page.svelte
+msgid "Loading"
+msgstr "Loading"
+
+#: src/routes/+page.svelte
+msgid "Username: <0/>"
+msgstr "Username: <0/>"
+
+#: src/routes/+page.svelte
+msgid "Email: <0/>"
+msgstr "Email: <0/>"
+
+#: src/routes/+page.svelte
+msgid "Password: <0/>"
+msgstr "Password: <0/>"
+
+#: src/routes/+page.svelte
+msgid "Create User"
+msgstr "Create User"
