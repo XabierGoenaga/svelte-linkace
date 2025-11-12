@@ -5,5 +5,8 @@ import { defineConfig } from 'vite';
 import { wuchale } from '@wuchale/vite-plugin';
 
 export default defineConfig({
-	plugins: [wuchale(), sveltekit(), devtoolsJson()]
+	plugins: [wuchale(), sveltekit(), devtoolsJson()],
+	server: {
+		allowedHosts: ["vite.xabier.uk"]
+	}
 });
