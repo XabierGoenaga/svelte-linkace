@@ -1,33 +1,101 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-09T11:20:47.909Z\n"
+"PO-Revision-Date: 2025-11-13T19:27:53.615Z\n"
+"Last-Translator: \n"
 "Language: es\n"
-"MIME-Version: 1.0\n"
+"Language-Team: \n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2025-11-09T11:20:47.909Z\n"
-"POT-Creation-Date: 2025-11-09T11:20:47.909Z\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"MIME-Version: 1.0\n"
 
+#: src/routes/(app)/+page.svelte
+#: src/routes/(auth)/register/+page.svelte
 #: src/routes/+page.svelte
-msgid "Error"
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: src/routes/(app)/+page.svelte
+#: src/routes/(auth)/register/+page.svelte
+#: src/routes/+page.svelte
+msgid "Password"
+msgstr "Contraseña"
+
+#: src/routes/(app)/+page.svelte
+#: src/routes/(auth)/register/+page.svelte
+#: src/routes/+page.svelte
+msgid "Confirm Password"
+msgstr "Confirmar contraseña"
+
+#~ msgid "Create User"
+#~ msgstr ""
+
+#~ msgid "Name"
+#~ msgstr ""
+
+#~ msgid "Xabier Goenaga"
+#~ msgstr ""
+
+#: src/routes/(app)/+page.svelte
+#: src/routes/(auth)/register/+page.svelte
+#: src/routes/+page.svelte
+msgid "Create Account"
 msgstr ""
 
+#~ msgid "Props recibidas"
+#~ msgstr ""
+
+#~ msgid "Funciones disponibles: {0}"
+#~ msgstr ""
+
+#~ msgid "Props recibidas (Click para expandir)"
+#~ msgstr ""
+
+#~ msgid "Funciones disponibles:"
+#~ msgstr ""
+
+#~ msgid "Ninguna"
+#~ msgstr ""
+
+#: src/routes/(app)/+page.svelte
+#: src/routes/(auth)/register/+page.svelte
 #: src/routes/+page.svelte
-msgid "Loading"
+msgid "Full Name"
 msgstr ""
 
+#: src/routes/(app)/+page.svelte
+#: src/routes/(auth)/register/+page.svelte
 #: src/routes/+page.svelte
-msgid "Username: <0/>"
+msgid "Your full name"
 msgstr ""
 
+#: src/routes/(app)/+page.svelte
+#: src/routes/(auth)/register/+page.svelte
 #: src/routes/+page.svelte
-msgid "Email: <0/>"
+msgid "At least 8 characters"
 msgstr ""
 
+#: src/routes/(app)/+page.svelte
+#: src/routes/(auth)/register/+page.svelte
 #: src/routes/+page.svelte
-msgid "Password: <0/>"
+msgid "Re-enter your password"
 msgstr ""
 
-#: src/routes/+page.svelte
-msgid "Create User"
+#~ msgid "Todos los Errores"
+#~ msgstr ""
+
+#~ msgid "Datos"
+#~ msgstr ""
+
+#~ msgid "Change Data>"
+#~ msgstr ""
+
+#~ msgid "Change Data"
+#~ msgstr ""
+
+#: src/routes/(auth)/register/+page.svelte
+msgid "Create Data"
 msgstr ""
