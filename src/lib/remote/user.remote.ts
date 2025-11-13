@@ -1,4 +1,4 @@
-import { fail } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 import { APIError } from 'better-auth';
 
 import { query, form } from '$app/server';
@@ -29,16 +29,19 @@ export const createUser = form(UserDTO.CREATE_USER, async (data, invalid) => {
 		await auth.api.signUpEmail({
 			body: {
 				name: data.name,
-				email: 'xabiergoenagaperez@gmail.com',
+				email: data.email,
 				password: data.password
-			}
+			},
+			
 		});
 	} catch (error) {
 		if (error instanceof APIError) {
-			invalid(invalid.email(`we don't have enough hotcakes`));
-			// if (error.name === 'EMAIL_ALREADY_REGISTERED') {
-			// 	console.log('Email already registered');
-			// }
+			// invalid(invalid.email(`we don't have enough hotcakes`));
+			// // if (error.name === 'EMAIL_ALREADY_REGISTERED') {
+			// // 	console.log('Email already registered');
+			// // }
 		}
 	}
+
+	redirect(303, '/login');
 });
