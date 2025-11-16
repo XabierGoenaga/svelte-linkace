@@ -8,6 +8,41 @@
       "when": 1762689384110,
       "tag": "0000_conscious_ezekiel",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1763073525383,
+      "tag": "0001_clumsy_anthem",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1763158134590,
+      "tag": "0002_useful_power_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1763159071899,
+      "tag": "0003_dry_susan_delgado",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1763160648437,
+      "tag": "0004_open_komodo",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1763161954286,
+      "tag": "0005_stale_bruce_banner",
+      "breakpoints": true
     }
   ]
 }

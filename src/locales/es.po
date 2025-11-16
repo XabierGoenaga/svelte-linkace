@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-09T11:20:47.909Z\n"
-"PO-Revision-Date: 2025-11-13T19:27:53.615Z\n"
+"PO-Revision-Date: 2025-11-14T23:58:22.902Z\n"
 "Last-Translator: \n"
 "Language: es\n"
 "Language-Team: \n"
@@ -98,4 +98,122 @@ msgstr ""
 
 #: src/routes/(auth)/register/+page.svelte
 msgid "Create Data"
+msgstr ""
+
+#: src/routes/(app)/links/create/+page.svelte
+msgid "Title"
+msgstr ""
+
+#: src/routes/(app)/links/create/+page.svelte
+msgid "Description"
+msgstr ""
+
+#: src/routes/(app)/links/create/+page.svelte
+msgid "Create Link"
+msgstr ""
+
+#~ msgid "Fail"
+#~ msgstr ""
+
+#~ msgid "Loading"
+#~ msgstr ""
+
+#~ msgid "Yes"
+#~ msgstr ""
+
+#~ msgid "No"
+#~ msgstr ""
+
+#~ msgid "Favorite: {0}"
+#~ msgstr ""
+
+#~ msgid "Toggle Favorite"
+#~ msgstr ""
+
+#~ msgid "Página anterior"
+#~ msgstr ""
+
+#~ msgid "Ir a página {0}"
+#~ msgstr ""
+
+#~ msgid "Página siguiente"
+#~ msgstr ""
+
+#: src/lib/component/Boundary.svelte
+msgid "Loading..."
+msgstr ""
+
+#: src/lib/component/Boundary.svelte
+msgid "Failed"
+msgstr ""
+
+#~ msgid "gaming"
+#~ msgstr ""
+
+#~ msgid "javascript"
+#~ msgstr ""
+
+#~ msgid "react"
+#~ msgstr ""
+
+#~ msgid "/* @wc-ignore */ <0>gaming</0> /* @wc-ignore */ <1>javascript</1> /* @wc-ignore */ <2>react</2>"
+#~ msgstr ""
+
+#~ msgid "Layout"
+#~ msgstr ""
+
+#: src/routes/(app)/+layout.svelte
+#: src/routes/(app)/links/+page.svelte
+msgid "Links"
+msgstr ""
+
+#: src/routes/(app)/+layout.svelte
+msgid "Lists"
+msgstr ""
+
+#: src/routes/(app)/+layout.svelte
+msgid "Tags"
+msgstr ""
+
+#: src/routes/(app)/+layout.svelte
+msgid "Settings"
+msgstr ""
+
+#: src/routes/(app)/+layout.svelte
+msgid "Login"
+msgstr ""
+
+#~ msgid "Contenido del enlace {0}"
+#~ msgstr ""
+
+#~ msgid "ID: {0}"
+#~ msgstr ""
+
+#. placeholder {0}: new Date(createdAt).toLocaleString()
+#: src/routes/(app)/links/+page.svelte
+msgid "Creado: {0}"
+msgstr ""
+
+#~ msgid "Descripción"
+#~ msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Abrir enlace en nueva pestaña"
+msgstr ""
+
+#: src/routes/(app)/links/[id=isNumber]/+page.svelte
+#: src/routes/(app)/links/[id]/+page.svelte
+msgid "Visit Link"
+msgstr ""
+
+#: src/routes/(app)/tags/create/+page.svelte
+msgid "Tag Name"
+msgstr ""
+
+#: src/routes/(app)/tags/create/+page.svelte
+msgid "Create Tag"
+msgstr ""
+
+#: src/routes/(app)/links/create/+page.server.ts
+msgid "Invalid form data"
 msgstr ""

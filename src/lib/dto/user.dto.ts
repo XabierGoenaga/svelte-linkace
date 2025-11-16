@@ -1,8 +1,6 @@
 import { pipe, string, minLength, maxLength, object, email, nonEmpty, uuid } from 'valibot';
 
-import { CommonDTO } from '$lib/dto';
-
-const GET_USERS = object({ ...CommonDTO.Pagination.Offset });
+const GET_USERS = object({});
 const GET_USER_BY_ID = pipe(string(), uuid());
 const CREATE_USER = object({
 	name: pipe(string(), minLength(3), maxLength(30)),

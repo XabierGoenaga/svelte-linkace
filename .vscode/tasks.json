@@ -1,0 +1,55 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "SvelteKit",
+			"type": "shell",
+			"command": "pnpm dev",
+			"isBackground": true,
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"focus": false,
+				"close": false,
+				"showReuseMessage": false
+			},
+			"problemMatcher": [],
+			"runOptions": {
+				"runOn": "folderOpen"
+			}
+		},
+		{
+			"label": "Studio",
+			"type": "shell",
+			"command": "pnpm db:studio",
+			"isBackground": true,
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"focus": false,
+				"close": false,
+				"showReuseMessage": false
+			},
+			"problemMatcher": [],
+			"runOptions": {
+				"runOn": "folderOpen"
+			}
+		},
+		{
+			"label": "Start Docker Containers",
+			"type": "shell",
+			"command": "docker container start cace394514bb 4ef2f4dee248",
+			"isBackground": false,
+			"presentation": {
+				"reveal": "always",
+				"panel": "new",
+				"focus": false,
+				"close": true
+			},
+			"problemMatcher": [],
+			"runOptions": {
+				"runOn": "folderOpen"
+			}
+		}
+	]
+}

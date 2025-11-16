@@ -1,12 +1,7 @@
-import { pipe, number, finite, minValue, maxValue } from 'valibot';
+import { object, number, fallback } from 'valibot';
 
-export const PaginationDTO = {
-	offset: pipe(number(), finite(), minValue(0)),
-	limit: pipe(number(), finite(), minValue(0), maxValue(100))
-};
-
-export const CommonDTO = {
-	Pagination: {
-		Offset: PaginationDTO
-	}
-};
+export const PaginationDTO = object({
+	page: fallback(number(), 1),
+	offset: fallback(number(), 0),
+	limit: fallback(number(), 10)
+});

@@ -1,4 +1,4 @@
-import type { Handle } from '@sveltejs/kit';
+import { redirect, type Handle } from '@sveltejs/kit';
 import { sequence } from '@sveltejs/kit/hooks';
 import { svelteKitHandler } from 'better-auth/svelte-kit';
 import { building } from '$app/environment';
@@ -22,6 +22,12 @@ export const betterAuth: Handle = async ({ event, resolve }) => {
 	const session = await auth.api.getSession({
 		headers: event.request.headers
 	});
+
+	// Protect all routes except /login and /register
+	const pathname = event.url.pathname;
+	if (!session && pathname !== '/login' && pathname !== '/register') {
+		redirect(307, '/login');
+	}
 
 	// Make session and user available on server
 	if (session) {

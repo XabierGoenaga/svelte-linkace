@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-09T11:20:47.908Z\n"
-"PO-Revision-Date: 2025-11-13T19:27:53.613Z\n"
+"PO-Revision-Date: 2025-11-14T23:58:22.899Z\n"
 "Last-Translator: \n"
 "Language: en\n"
 "Language-Team: \n"
@@ -99,3 +99,121 @@ msgstr "Re-enter your password"
 #: src/routes/(auth)/register/+page.svelte
 msgid "Create Data"
 msgstr "Create Data"
+
+#: src/routes/(app)/links/create/+page.svelte
+msgid "Title"
+msgstr "Title"
+
+#: src/routes/(app)/links/create/+page.svelte
+msgid "Description"
+msgstr "Description"
+
+#: src/routes/(app)/links/create/+page.svelte
+msgid "Create Link"
+msgstr "Create Link"
+
+#~ msgid "Fail"
+#~ msgstr "Fail"
+
+#~ msgid "Loading"
+#~ msgstr "Loading"
+
+#~ msgid "Yes"
+#~ msgstr "Yes"
+
+#~ msgid "No"
+#~ msgstr "No"
+
+#~ msgid "Favorite: {0}"
+#~ msgstr "Favorite: {0}"
+
+#~ msgid "Toggle Favorite"
+#~ msgstr "Toggle Favorite"
+
+#~ msgid "Página anterior"
+#~ msgstr "Página anterior"
+
+#~ msgid "Ir a página {0}"
+#~ msgstr "Ir a página {0}"
+
+#~ msgid "Página siguiente"
+#~ msgstr "Página siguiente"
+
+#: src/lib/component/Boundary.svelte
+msgid "Loading..."
+msgstr "Loading..."
+
+#: src/lib/component/Boundary.svelte
+msgid "Failed"
+msgstr "Failed"
+
+#~ msgid "gaming"
+#~ msgstr "gaming"
+
+#~ msgid "javascript"
+#~ msgstr "javascript"
+
+#~ msgid "react"
+#~ msgstr "react"
+
+#~ msgid "/* @wc-ignore */ <0>gaming</0> /* @wc-ignore */ <1>javascript</1> /* @wc-ignore */ <2>react</2>"
+#~ msgstr "/* @wc-ignore */ <0>gaming</0> /* @wc-ignore */ <1>javascript</1> /* @wc-ignore */ <2>react</2>"
+
+#~ msgid "Layout"
+#~ msgstr "Layout"
+
+#: src/routes/(app)/+layout.svelte
+#: src/routes/(app)/links/+page.svelte
+msgid "Links"
+msgstr "Links"
+
+#: src/routes/(app)/+layout.svelte
+msgid "Lists"
+msgstr "Lists"
+
+#: src/routes/(app)/+layout.svelte
+msgid "Tags"
+msgstr "Tags"
+
+#: src/routes/(app)/+layout.svelte
+msgid "Settings"
+msgstr "Settings"
+
+#: src/routes/(app)/+layout.svelte
+msgid "Login"
+msgstr "Login"
+
+#~ msgid "Contenido del enlace {0}"
+#~ msgstr "Contenido del enlace {0}"
+
+#~ msgid "ID: {0}"
+#~ msgstr "ID: {0}"
+
+#. placeholder {0}: new Date(createdAt).toLocaleString()
+#: src/routes/(app)/links/+page.svelte
+msgid "Creado: {0}"
+msgstr "Creado: {0}"
+
+#~ msgid "Descripción"
+#~ msgstr "Descripción"
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Abrir enlace en nueva pestaña"
+msgstr "Abrir enlace en nueva pestaña"
+
+#: src/routes/(app)/links/[id=isNumber]/+page.svelte
+#: src/routes/(app)/links/[id]/+page.svelte
+msgid "Visit Link"
+msgstr "Visit Link"
+
+#: src/routes/(app)/tags/create/+page.svelte
+msgid "Tag Name"
+msgstr "Tag Name"
+
+#: src/routes/(app)/tags/create/+page.svelte
+msgid "Create Tag"
+msgstr "Create Tag"
+
+#: src/routes/(app)/links/create/+page.server.ts
+msgid "Invalid form data"
+msgstr "Invalid form data"

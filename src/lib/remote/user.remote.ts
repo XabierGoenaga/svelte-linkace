@@ -3,10 +3,13 @@ import { APIError } from 'better-auth';
 
 import { query, form } from '$app/server';
 
+import { getPaginationParams } from '$lib/utils';
 import { db, auth } from '$lib/server';
 import { UserDTO } from '$lib/dto';
 
-export const getAllUsers = query(UserDTO.GET_USERS, async ({ offset, limit }) => {
+export const getAllUsers = query(UserDTO.GET_USERS, async () => {
+	const { offset, limit } = getPaginationParams();
+
 	return await db.query.user.findMany({
 		offset: offset,
 		limit: limit
@@ -24,15 +27,14 @@ export const getRandomUser = query(async () => {
 	return users[0];
 });
 
-export const createUser = form(UserDTO.CREATE_USER, async (data, invalid) => {
+export const createUser = form(UserDTO.CREATE_USER, async (data) => {
 	try {
 		await auth.api.signUpEmail({
 			body: {
 				name: data.name,
 				email: data.email,
 				password: data.password
-			},
-			
+			}
 		});
 	} catch (error) {
 		if (error instanceof APIError) {
