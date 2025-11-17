@@ -50,6 +50,13 @@
       "when": 1763290252433,
       "tag": "0006_bitter_shatterstar",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1763377185754,
+      "tag": "0007_kind_blur",
+      "breakpoints": true
     }
   ]
 }

@@ -37,6 +37,10 @@
 
 <section class="link-article">
 	<Boundary>
+		{#if (await getLinks()).length === 0}
+			<p>No hay links para mostrar.</p>
+		{/if}
+
 		{#each await getLinks() as { id, title, description, url, favicon, createdAt, linksToTags } (id)}
 			<article class="link-item">
 				<header role="img">

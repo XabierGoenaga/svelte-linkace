@@ -65,3 +65,44 @@ export const linksToTagsRelations = relations(linksToTags, ({ one }) => ({
 		references: [tags.id]
 	})
 }));
+
+export const lists = pgTable('lists', {
+	id: serial('id').primaryKey(),
+	name: text('name').notNull(),
+	userId: text('user_id')
+		.notNull()
+		.references(() => user.id),
+	createdAt: timestamp('createdAt').notNull().defaultNow(),
+	updatedAt: timestamp('updatedAt')
+		.notNull()
+		.defaultNow()
+		.$onUpdate(() => new Date())
+});
+
+export const listsRelations = relations(lists, ({ many }) => ({
+	linksToLists: many(linksToLists)
+}));
+
+export const linksToLists = pgTable(
+	'link_to_lists',
+	{
+		linkId: serial('link_id')
+			.notNull()
+			.references(() => links.id, { onDelete: 'cascade' }),
+		listId: serial('list_id')
+			.notNull()
+			.references(() => lists.id, { onDelete: 'cascade' })
+	},
+	(t) => [primaryKey({ columns: [t.linkId, t.listId] })]
+);
+
+export const linksToListsRelations = relations(linksToLists, ({ one }) => ({
+	link: one(links, {
+		fields: [linksToLists.linkId],
+		references: [links.id]
+	}),
+	list: one(lists, {
+		fields: [linksToLists.listId],
+		references: [lists.id]
+	})
+}));

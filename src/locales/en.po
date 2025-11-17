@@ -33,8 +33,9 @@ msgstr "Confirm Password"
 #~ msgid "Create User"
 #~ msgstr "Create User"
 
-#~ msgid "Name"
-#~ msgstr "Name"
+#: src/routes/(app)/lists/create/+page.svelte
+msgid "Name"
+msgstr "Name"
 
 #~ msgid "Xabier Goenaga"
 #~ msgstr "Xabier Goenaga"
@@ -268,3 +269,14 @@ msgstr "Offset"
 #: src/routes/(app)/links/+page.svelte
 msgid "Limit"
 msgstr "Limit"
+
+#: src/routes/(app)/links/+page.svelte
+msgid "No hay links para mostrar."
+msgstr "No hay links para mostrar."
+
+#~ msgid "Loaded"
+#~ msgstr "Loaded"
+
+#: src/routes/(app)/lists/create/+page.svelte
+msgid "Create"
+msgstr "Create"

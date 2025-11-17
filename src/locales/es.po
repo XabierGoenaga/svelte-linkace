@@ -33,8 +33,9 @@ msgstr "Confirmar contraseña"
 #~ msgid "Create User"
 #~ msgstr ""
 
-#~ msgid "Name"
-#~ msgstr ""
+#: src/routes/(app)/lists/create/+page.svelte
+msgid "Name"
+msgstr ""
 
 #~ msgid "Xabier Goenaga"
 #~ msgstr ""
@@ -267,4 +268,16 @@ msgstr ""
 
 #: src/routes/(app)/links/+page.svelte
 msgid "Limit"
+msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "No hay links para mostrar."
+msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Loaded"
+msgstr ""
+
+#: src/routes/(app)/lists/create/+page.svelte
+msgid "Create"
 msgstr ""
