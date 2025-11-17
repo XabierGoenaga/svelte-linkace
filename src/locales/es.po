@@ -189,7 +189,7 @@ msgstr ""
 #~ msgid "ID: {0}"
 #~ msgstr ""
 
-#. placeholder {0}: new Date(createdAt).toLocaleString()
+#. placeholder {0}: new Date(createdAt).toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })
 #: src/routes/(app)/links/+page.svelte
 msgid "Creado: {0}"
 msgstr ""
@@ -197,9 +197,8 @@ msgstr ""
 #~ msgid "Descripción"
 #~ msgstr ""
 
-#: src/routes/(app)/links/+page.svelte
-msgid "Abrir enlace en nueva pestaña"
-msgstr ""
+#~ msgid "Abrir enlace en nueva pestaña"
+#~ msgstr ""
 
 #: src/routes/(app)/links/[id=isNumber]/+page.svelte
 #: src/routes/(app)/links/[id]/+page.svelte
@@ -216,4 +215,56 @@ msgstr ""
 
 #: src/routes/(app)/links/create/+page.server.ts
 msgid "Invalid form data"
+msgstr ""
+
+#~ msgid "Favorite"
+#~ msgstr ""
+
+#~ msgid "Check later"
+#~ msgstr ""
+
+#~ msgid "Archive"
+#~ msgstr ""
+
+#~ msgid "No tags"
+#~ msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Etiquetas"
+msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Fecha de creación"
+msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "URL A-Z"
+msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "URL Z-A"
+msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Titulo A-Z"
+msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Titulo Z-A"
+msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Oldest A-Z"
+msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Newest A-Z"
+msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Offset"
+msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Limit"
 msgstr ""

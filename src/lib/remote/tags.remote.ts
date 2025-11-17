@@ -20,7 +20,7 @@ export const getTags = query(async () => {
 export const getTagById = query(TagDTO.GET_BY_ID, async (id) => {
 	const { locals } = getRequestEvent();
 
-	const tag = db.query.tags.findFirst({
+	const tag = await db.query.tags.findFirst({
 		where: (tags, { and, eq }) => and(eq(tags.id, id), eq(tags.userId, locals.user.id))
 	});
 

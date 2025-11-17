@@ -22,7 +22,7 @@ export const links = pgTable('links', {
 });
 
 export const linksRelations = relations(links, ({ many }) => ({
-	tags: many(tags)
+	linksToTags: many(linksToTags)
 }));
 
 export const tags = pgTable('tags', {
@@ -39,11 +39,11 @@ export const tags = pgTable('tags', {
 });
 
 export const tagsRelations = relations(tags, ({ many }) => ({
-	links: many(links)
+	tagsToLinks: many(linksToTags)
 }));
 
-export const linkTags = pgTable(
-	'link_tags',
+export const linksToTags = pgTable(
+	'link_to_tags',
 	{
 		linkId: serial('link_id')
 			.notNull()
@@ -55,13 +55,13 @@ export const linkTags = pgTable(
 	(t) => [primaryKey({ columns: [t.linkId, t.tagId] })]
 );
 
-export const linkTagsRelations = relations(linkTags, ({ one }) => ({
+export const linksToTagsRelations = relations(linksToTags, ({ one }) => ({
 	link: one(links, {
-		fields: [linkTags.linkId],
+		fields: [linksToTags.linkId],
 		references: [links.id]
 	}),
 	tag: one(tags, {
-		fields: [linkTags.tagId],
+		fields: [linksToTags.tagId],
 		references: [tags.id]
 	})
 }));

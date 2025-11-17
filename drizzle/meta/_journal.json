@@ -43,6 +43,13 @@
       "when": 1763161954286,
       "tag": "0005_stale_bruce_banner",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1763290252433,
+      "tag": "0006_bitter_shatterstar",
+      "breakpoints": true
     }
   ]
 }

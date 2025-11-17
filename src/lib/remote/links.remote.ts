@@ -4,17 +4,24 @@ import { count, eq } from 'drizzle-orm';
 import { command, form, getRequestEvent, query } from '$app/server';
 
 import { LinkDTO } from '$lib/dto';
-import { db, links, linkTags } from '$lib/server';
+import { db, links, linksToTags } from '$lib/server';
 import { getPaginationParams } from '$lib/utils';
 
 export const getLinks = query(async () => {
+	const request = getRequestEvent();
 	const { page, offset, limit } = getPaginationParams();
 
 	return await db.query.links.findMany({
 		offset: page * offset,
 		limit: limit,
-		extras: {},
-		// where: () => ({}),
+		with: {
+			linksToTags: {
+				with: {
+					tag: true
+				}
+			}
+		},
+		where: (links, { eq }) => eq(links.userId, request.locals.user.id),
 		orderBy: (links, { desc }) => [desc(links.createdAt)]
 	});
 });
@@ -68,22 +75,20 @@ export const createLink = form(LinkDTO.CREATE, async ({ title, url, description,
 		})
 		.returning();
 
-	console.log('TAGS:', tags);
+	if (tags && tags.length > 0) {
+		await db.transaction(async (tx) => {
+			insertedLinks.forEach((link) => {
+				tags.forEach(async (tagId) => {
+					await tx.insert(linksToTags).values({
+						linkId: link.id,
+						tagId
+					});
+				});
+			});
+		});
+	}
 
-	// if (tags && tags.length > 0) {
-	// 	await db.transaction(async (tx) => {
-	// 		insertedLinks.forEach((link) => {
-	// 			tags.forEach(async (tagId) => {
-	// 				await tx.insert(linkTags).values({
-	// 					linkId: link.id,
-	// 					tagId
-	// 				});
-	// 			});
-	// 		});
-	// 	});
-	// }
-
-	// redirect(303, '/links');
+	redirect(303, '/links');
 });
 
 export const toggleLinkFavorite = command(LinkDTO.TOGGLE_FAVORITE_ID, async (id) => {
