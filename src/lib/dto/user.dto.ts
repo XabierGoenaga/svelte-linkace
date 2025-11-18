@@ -1,6 +1,5 @@
 import { pipe, string, minLength, maxLength, object, email, nonEmpty, uuid } from 'valibot';
 
-const GET_USERS = object({});
 const GET_USER_BY_ID = pipe(string(), uuid());
 const CREATE_USER = object({
 	name: pipe(string(), minLength(3), maxLength(30)),
@@ -10,7 +9,6 @@ const CREATE_USER = object({
 });
 
 export const UserDTO = {
-	GET_USERS,
 	GET_USER_BY_ID,
 	CREATE_USER
 };

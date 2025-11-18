@@ -106,3 +106,29 @@ export const linksToListsRelations = relations(linksToLists, ({ one }) => ({
 		references: [lists.id]
 	})
 }));
+
+export const listShares = pgTable(
+	'list_shares',
+	{
+		listId: serial('list_id')
+			.notNull()
+			.references(() => lists.id, { onDelete: 'cascade' }),
+		sharedWithUserId: text('shared_with_user_id')
+			.notNull()
+			.references(() => user.id, { onDelete: 'cascade' }),
+		canEdit: boolean('can_edit').notNull().default(false),
+		createdAt: timestamp('createdAt').notNull().defaultNow()
+	},
+	(t) => [primaryKey({ columns: [t.listId, t.sharedWithUserId] })]
+);
+
+export const listSharesRelations = relations(listShares, ({ one }) => ({
+	list: one(lists, {
+		fields: [listShares.listId],
+		references: [lists.id]
+	}),
+	sharedWithUser: one(user, {
+		fields: [listShares.sharedWithUserId],
+		references: [user.id]
+	})
+}));

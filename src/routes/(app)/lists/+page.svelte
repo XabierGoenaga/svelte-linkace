@@ -4,11 +4,24 @@
 </script>
 
 <Boundary>
-	{#each await getLists() as { id, name } (id)}
-		<div class="p-4 border-b">
-			<a href={`/lists/${id}`} class="text-lg font-medium text-blue-600 hover:underline">
-				{name}
-			</a>
+	{#await getLists() then lists}
+		<div class="list-container">
+			{#each lists as { id, name } (id)}
+				<a class="list-item" href={`/lists/${id}`}>
+					{name}
+				</a>
+			{/each}
 		</div>
-	{/each}
+	{/await}
 </Boundary>
+
+<style>
+	.list-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		gap: 1rem;
+	}
+
+	.list-item {
+	}
+</style>

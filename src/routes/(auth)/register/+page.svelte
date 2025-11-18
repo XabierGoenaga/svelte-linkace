@@ -1,6 +1,6 @@
 <script>
 	import { Button, Form, Input } from '$lib/component';
-	import { createUser, getRandomUser } from '$lib/remote';
+	import { createUser } from '$lib/remote';
 	import { faker } from '@faker-js/faker';
 
 	const createData = () => {

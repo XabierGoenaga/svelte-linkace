@@ -3,16 +3,23 @@ import { APIError } from 'better-auth';
 
 import { query, form } from '$app/server';
 
-import { getPaginationParams } from '$lib/utils';
+import { getPaginationParams, getQuerySearch } from '$lib/utils';
 import { db, auth } from '$lib/server';
 import { UserDTO } from '$lib/dto';
 
-export const getAllUsers = query(UserDTO.GET_USERS, async () => {
+export const getAllUsers = query(async () => {
 	const { offset, limit } = getPaginationParams();
+
+	const searchByEmail = getQuerySearch();
 
 	return await db.query.user.findMany({
 		offset: offset,
-		limit: limit
+		limit: limit,
+		where: (user, { like, or }) =>
+			searchByEmail
+				? or(like(user.email, `%${searchByEmail}%`), like(user.name, `%${searchByEmail}%`))
+				: undefined,
+		orderBy: (user, { desc }) => [desc(user.createdAt)]
 	});
 });
 
@@ -20,11 +27,6 @@ export const getUserById = query(UserDTO.GET_USER_BY_ID, async (id) => {
 	return await db.query.user.findFirst({
 		where: (user, { eq }) => eq(user.id, id)
 	});
-});
-
-export const getRandomUser = query(async () => {
-	const users = await db.query.user.findMany();
-	return users[0];
 });
 
 export const createUser = form(UserDTO.CREATE_USER, async (data) => {
@@ -45,5 +47,5 @@ export const createUser = form(UserDTO.CREATE_USER, async (data) => {
 		}
 	}
 
-	redirect(303, '/login');
+	// redirect(303, '/login');
 });

@@ -187,8 +187,10 @@ msgstr "Login"
 #~ msgid "Contenido del enlace {0}"
 #~ msgstr "Contenido del enlace {0}"
 
-#~ msgid "ID: {0}"
-#~ msgstr "ID: {0}"
+#. placeholder {0}: list.id
+#: src/routes/(app)/lists/[id=isNumber]/+page.svelte
+msgid "ID: {0}"
+msgstr "ID: {0}"
 
 #. placeholder {0}: new Date(createdAt).toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })
 #: src/routes/(app)/links/+page.svelte
@@ -280,3 +282,36 @@ msgstr "No hay links para mostrar."
 #: src/routes/(app)/lists/create/+page.svelte
 msgid "Create"
 msgstr "Create"
+
+#~ msgid "Description: {0}"
+#~ msgstr "Description: {0}"
+
+#. placeholder {0}: new Date(list.createdAt).toLocaleDateString()
+#: src/routes/(app)/lists/[id=isNumber]/+page.svelte
+msgid "Created At: {0}"
+msgstr "Created At: {0}"
+
+#. placeholder {0}: new Date(list.updatedAt).toLocaleDateString()
+#: src/routes/(app)/lists/[id=isNumber]/+page.svelte
+msgid "Updated At: {0}"
+msgstr "Updated At: {0}"
+
+#: src/routes/(app)/lists/[id=isNumber]/+page.svelte
+msgid "Add Selected Links to List"
+msgstr "Add Selected Links to List"
+
+#: src/routes/(app)/lists/[id=isNumber]/+page.svelte
+msgid "Links added to the list successfully!"
+msgstr "Links added to the list successfully!"
+
+#: src/routes/(app)/lists/[id=isNumber]/+page.svelte
+msgid "Failed to add links to the list."
+msgstr "Failed to add links to the list."
+
+#: src/routes/(app)/lists/create/+page.svelte
+msgid "Search Email"
+msgstr "Search Email"
+
+#: src/routes/(app)/lists/create/+page.svelte
+msgid "Search by email"
+msgstr "Search by email"

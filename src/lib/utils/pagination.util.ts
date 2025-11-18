@@ -8,3 +8,8 @@ export const getPaginationParams = () => {
 
 	return data;
 };
+
+export const getQuerySearch = (extra: string = '') => {
+	const request = getRequestEvent();
+	return request.url.searchParams.get(!extra ? 'query' : `query.${extra}`);
+};
