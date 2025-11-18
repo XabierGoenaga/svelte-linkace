@@ -10,8 +10,10 @@ const GET_BY_ID = pipe(
 const CREATE_TAG = object({
 	name: pipe(string(), minLength(1))
 });
+const GET_BY_NAME = pipe(string());
 
 export const TagDTO = {
 	GET_BY_ID,
+	GET_BY_NAME,
 	CREATE_TAG
 };

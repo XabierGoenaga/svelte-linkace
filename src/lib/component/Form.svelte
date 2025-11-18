@@ -9,3 +9,11 @@
 <form {...restProps}>
 	{@render children()}
 </form>
+
+<style>
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+</style>

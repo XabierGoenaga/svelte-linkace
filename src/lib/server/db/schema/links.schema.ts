@@ -27,7 +27,7 @@ export const linksRelations = relations(links, ({ many }) => ({
 
 export const tags = pgTable('tags', {
 	id: serial('id').primaryKey(),
-	name: text('name').notNull().unique(),
+	name: text('name').notNull(),
 	userId: text('user_id')
 		.notNull()
 		.references(() => user.id),
@@ -38,8 +38,12 @@ export const tags = pgTable('tags', {
 		.$onUpdate(() => new Date())
 });
 
-export const tagsRelations = relations(tags, ({ many }) => ({
-	tagsToLinks: many(linksToTags)
+export const tagsRelations = relations(tags, ({ many, one }) => ({
+	tagsToLinks: many(linksToTags),
+	owner: one(user, {
+		fields: [tags.userId],
+		references: [user.id]
+	})
 }));
 
 export const linksToTags = pgTable(
@@ -80,7 +84,8 @@ export const lists = pgTable('lists', {
 });
 
 export const listsRelations = relations(lists, ({ many }) => ({
-	linksToLists: many(linksToLists)
+	linksToLists: many(linksToLists),
+	listShares: many(listShares)
 }));
 
 export const linksToLists = pgTable(

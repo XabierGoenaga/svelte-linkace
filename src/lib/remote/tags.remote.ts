@@ -31,6 +31,16 @@ export const getTagById = query(TagDTO.GET_BY_ID, async (id) => {
 	return tag;
 });
 
+export const getTagByName = query(TagDTO.GET_BY_NAME, async (name) => {
+	const request = getRequestEvent();
+
+	return await db.query.tags.findMany({
+		with: { owner: true },
+		where: (tags, { and, ilike, eq }) =>
+			and(ilike(tags.name, `%${name}%`), eq(tags.userId, request.locals.user.id))
+	});
+});
+
 export const createTag = form(TagDTO.CREATE_TAG, async ({ name }) => {
 	const { locals } = getRequestEvent();
 

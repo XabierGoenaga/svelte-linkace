@@ -279,9 +279,8 @@ msgstr ""
 #~ msgid "Loaded"
 #~ msgstr ""
 
-#: src/routes/(app)/lists/create/+page.svelte
-msgid "Create"
-msgstr ""
+#~ msgid "Create"
+#~ msgstr ""
 
 #~ msgid "Description: {0}"
 #~ msgstr ""
@@ -314,4 +313,20 @@ msgstr ""
 
 #: src/routes/(app)/lists/create/+page.svelte
 msgid "Search by email"
+msgstr ""
+
+#: src/routes/(app)/links/create/+page.svelte
+#: src/routes/(app)/links/create/+page.svelte
+msgid "Search by tag name"
+msgstr ""
+
+#~ msgid "Selecciona el Usuario"
+#~ msgstr ""
+
+#: src/routes/(app)/lists/+page.svelte
+msgid "Delete"
+msgstr ""
+
+#: src/routes/(app)/lists/+page.svelte
+msgid "Edit"
 msgstr ""

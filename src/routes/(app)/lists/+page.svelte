@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Boundary } from '$lib/component';
-	import { getLists } from '$lib/remote';
+	import { deleteListsById, getLists } from '$lib/remote';
 </script>
 
 <Boundary>
@@ -10,6 +10,8 @@
 				<a class="list-item" href={`/lists/${id}`}>
 					{name}
 				</a>
+				<a href={`/lists/${id}`}>Edit</a>
+				<button onclick={() => deleteListsById(id)}>Delete</button>
 			{/each}
 		</div>
 	{/await}

@@ -279,9 +279,8 @@ msgstr "No hay links para mostrar."
 #~ msgid "Loaded"
 #~ msgstr "Loaded"
 
-#: src/routes/(app)/lists/create/+page.svelte
-msgid "Create"
-msgstr "Create"
+#~ msgid "Create"
+#~ msgstr "Create"
 
 #~ msgid "Description: {0}"
 #~ msgstr "Description: {0}"
@@ -315,3 +314,19 @@ msgstr "Search Email"
 #: src/routes/(app)/lists/create/+page.svelte
 msgid "Search by email"
 msgstr "Search by email"
+
+#: src/routes/(app)/links/create/+page.svelte
+#: src/routes/(app)/links/create/+page.svelte
+msgid "Search by tag name"
+msgstr "Search by tag name"
+
+#~ msgid "Selecciona el Usuario"
+#~ msgstr "Selecciona el Usuario"
+
+#: src/routes/(app)/lists/+page.svelte
+msgid "Delete"
+msgstr "Delete"
+
+#: src/routes/(app)/lists/+page.svelte
+msgid "Edit"
+msgstr "Edit"

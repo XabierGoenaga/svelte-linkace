@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Form, Button, Input, Select } from '$lib/component';
-	import { createLink, getTags } from '$lib/remote';
+	import { Form, Button, Input, Select, Boundary } from '$lib/component';
+	import { createLink, getTagByName, getTags } from '$lib/remote';
 
 	import { faker } from '@faker-js/faker';
 
@@ -10,6 +10,11 @@
 		createLink.fields.description.set(faker.lorem.sentence());
 		// createLink.fields.tags.set(['1', '2']);
 	};
+
+	let searchQuery: string = $state('');
+	const searchedList = $derived(getTagByName(searchQuery));
+
+	$inspect('Search Query:', searchedList);
 </script>
 
 <Form {...createLink}>
@@ -29,3 +34,11 @@
 	<p style="color: red;">{issue.message}</p>
 	<p style="color: red;">{issue.path}</p>
 {/each}
+
+<Boundary>
+	<Input label="Search by tag name" bind:value={searchQuery} placeholder="Search by tag name" />
+
+	{#each await searchedList as { id, name, owner } (id)}
+		<p>{owner.name} - {name}</p>
+	{/each}
+</Boundary>

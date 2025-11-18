@@ -1,5 +1,6 @@
 <script>
 	import { Button, Form, Input } from '$lib/component';
+	import { LockIcon } from '$lib/icon';
 	import { createUser } from '$lib/remote';
 	import { faker } from '@faker-js/faker';
 
@@ -28,6 +29,7 @@
 		label="Email"
 		placeholder="you@example.com"
 		autocomplete="email"
+		icon={LockIcon}
 	/>
 
 	{#each createUser.fields.email.issues() as error}
