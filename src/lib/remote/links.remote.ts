@@ -63,32 +63,29 @@ export const getLinkById = query(LinkDTO.GET_BY_ID, async (id) => {
 });
 
 export const createLink = form(LinkDTO.CREATE, async ({ title, url, description, tags }) => {
-	const { locals } = getRequestEvent();
-
-	const insertedLinks = await db
-		.insert(links)
-		.values({
-			title,
-			url,
-			description,
-			userId: locals.user.id
-		})
-		.returning();
-
-	if (tags && tags.length > 0) {
-		await db.transaction(async (tx) => {
-			insertedLinks.forEach((link) => {
-				tags.forEach(async (tagId) => {
-					await tx.insert(linksToTags).values({
-						linkId: link.id,
-						tagId
-					});
-				});
-			});
-		});
-	}
-
-	redirect(303, '/links');
+	// const { locals } = getRequestEvent();
+	// const insertedLinks = await db
+	// 	.insert(links)
+	// 	.values({
+	// 		title,
+	// 		url,
+	// 		description,
+	// 		userId: locals.user.id
+	// 	})
+	// 	.returning();
+	// if (tags && tags.length > 0) {
+	// 	await db.transaction(async (tx) => {
+	// 		insertedLinks.forEach((link) => {
+	// 			tags.forEach(async (tagId) => {
+	// 				await tx.insert(linksToTags).values({
+	// 					linkId: link.id,
+	// 					tagId
+	// 				});
+	// 			});
+	// 		});
+	// 	});
+	// }
+	// redirect(303, '/links');
 });
 
 export const toggleLinkFavorite = command(LinkDTO.TOGGLE_FAVORITE_ID, async (id) => {

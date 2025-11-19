@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { LinkAceIcon } from '$lib/icon';
 	import type { LayoutProps } from './$types';
 
 	const { children }: LayoutProps = $props();
@@ -7,6 +8,9 @@
 <div role="banner">
 	<header>
 		<nav>
+			<a class="navbar-brand" href="https://demo.linkace.org/dashboard">
+				<LinkAceIcon />
+			</a>
 			<a href="/links">Links</a>
 			<a href="/lists">Lists</a>
 			<a href="/tags">Tags</a>
@@ -49,10 +53,17 @@
 		padding: 1rem 1rem;
 	}
 
+	nav {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+		align-items: center;
+	}
+
 	main {
 		width: 100%;
 		max-width: 1400px;
-		padding: 0rem 1rem;
+		padding: 1rem 1rem;
 		background-color: var(--bs-body-bg);
 	}
 </style>

@@ -1,18 +1,24 @@
-<script>
+<script lang="ts">
+	import type { PageProps } from './$types';
+
 	import { Button, Form, Input } from '$lib/component';
 	import { LockIcon } from '$lib/icon';
 	import { createUser } from '$lib/remote';
-	import { faker } from '@faker-js/faker';
+	import { dev } from '$app/environment';
+
+	const { data }: PageProps = $props();
 
 	const createData = () => {
-		createUser.fields.name.set(faker.person.fullName());
-		createUser.fields.email.set(faker.internet.email());
-		createUser.fields.password.set('password123');
-		createUser.fields.confirmPassword.set('password123');
+		console.log('Setting data...', data);
+
+		createUser.fields.name.set(data.name);
+		createUser.fields.email.set(data.email);
+		createUser.fields.password.set(data.password);
+		createUser.fields.confirmPassword.set(data.confirmPassword);
 	};
 </script>
 
-<Form {...createUser}>
+<Form title="Register" {...createUser}>
 	<Input
 		{...createUser.fields.name.as('text')}
 		label="Full Name"
@@ -58,8 +64,12 @@
 		<p style="color: red;">{error.message}</p>
 	{/each}
 
-	<Button type="submit" onclick={createData}>Create Account</Button>
-	<Button type="button" onclick={createData}>Create Data</Button>
+	{#snippet footer()}
+		<Button type="submit">Create Account</Button>
+		{#if dev}
+			<Button type="button" onclick={createData}>Set Data</Button>
+		{/if}
+	{/snippet}
 </Form>
 
 <pre>{JSON.stringify(createUser.fields.allIssues(), null, 2)}</pre>

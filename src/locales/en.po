@@ -41,6 +41,7 @@ msgstr "Name"
 #~ msgstr "Xabier Goenaga"
 
 #: src/routes/(app)/+page.svelte
+#: src/routes/(app)/+page.svelte
 #: src/routes/(auth)/register/+page.svelte
 #: src/routes/+page.svelte
 msgid "Create Account"
@@ -97,9 +98,8 @@ msgstr "Re-enter your password"
 #~ msgid "Change Data"
 #~ msgstr "Change Data"
 
-#: src/routes/(auth)/register/+page.svelte
-msgid "Create Data"
-msgstr "Create Data"
+#~ msgid "Create Data"
+#~ msgstr "Create Data"
 
 #: src/routes/(app)/links/create/+page.svelte
 msgid "Title"
@@ -109,6 +109,7 @@ msgstr "Title"
 msgid "Description"
 msgstr "Description"
 
+#: src/routes/(app)/links/create/+page.svelte
 #: src/routes/(app)/links/create/+page.svelte
 msgid "Create Link"
 msgstr "Create Link"
@@ -315,10 +316,8 @@ msgstr "Search Email"
 msgid "Search by email"
 msgstr "Search by email"
 
-#: src/routes/(app)/links/create/+page.svelte
-#: src/routes/(app)/links/create/+page.svelte
-msgid "Search by tag name"
-msgstr "Search by tag name"
+#~ msgid "Search by tag name"
+#~ msgstr "Search by tag name"
 
 #~ msgid "Selecciona el Usuario"
 #~ msgstr "Selecciona el Usuario"
@@ -330,3 +329,27 @@ msgstr "Delete"
 #: src/routes/(app)/lists/+page.svelte
 msgid "Edit"
 msgstr "Edit"
+
+#: src/routes/(app)/links/create/+page.svelte
+msgid "Tags (comma separated)"
+msgstr "Tags (comma separated)"
+
+#~ msgid "dadas"
+#~ msgstr "dadas"
+
+#: src/routes/(auth)/register/+page.svelte
+msgid "Register"
+msgstr "Register"
+
+#: src/routes/(auth)/register/+page.svelte
+msgid "Set Data"
+msgstr "Set Data"
+
+#~ msgid "Test"
+#~ msgstr "Test"
+
+#~ msgid "DropDown Option"
+#~ msgstr "DropDown Option"
+
+#~ msgid "DropDown Container"
+#~ msgstr "DropDown Container"

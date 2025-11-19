@@ -41,6 +41,7 @@ msgstr ""
 #~ msgstr ""
 
 #: src/routes/(app)/+page.svelte
+#: src/routes/(app)/+page.svelte
 #: src/routes/(auth)/register/+page.svelte
 #: src/routes/+page.svelte
 msgid "Create Account"
@@ -97,9 +98,8 @@ msgstr ""
 #~ msgid "Change Data"
 #~ msgstr ""
 
-#: src/routes/(auth)/register/+page.svelte
-msgid "Create Data"
-msgstr ""
+#~ msgid "Create Data"
+#~ msgstr ""
 
 #: src/routes/(app)/links/create/+page.svelte
 msgid "Title"
@@ -109,6 +109,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#: src/routes/(app)/links/create/+page.svelte
 #: src/routes/(app)/links/create/+page.svelte
 msgid "Create Link"
 msgstr ""
@@ -315,10 +316,8 @@ msgstr ""
 msgid "Search by email"
 msgstr ""
 
-#: src/routes/(app)/links/create/+page.svelte
-#: src/routes/(app)/links/create/+page.svelte
-msgid "Search by tag name"
-msgstr ""
+#~ msgid "Search by tag name"
+#~ msgstr ""
 
 #~ msgid "Selecciona el Usuario"
 #~ msgstr ""
@@ -330,3 +329,27 @@ msgstr ""
 #: src/routes/(app)/lists/+page.svelte
 msgid "Edit"
 msgstr ""
+
+#: src/routes/(app)/links/create/+page.svelte
+msgid "Tags (comma separated)"
+msgstr ""
+
+#~ msgid "dadas"
+#~ msgstr ""
+
+#: src/routes/(auth)/register/+page.svelte
+msgid "Register"
+msgstr ""
+
+#: src/routes/(auth)/register/+page.svelte
+msgid "Set Data"
+msgstr ""
+
+#~ msgid "Test"
+#~ msgstr ""
+
+#~ msgid "DropDown Option"
+#~ msgstr ""
+
+#~ msgid "DropDown Container"
+#~ msgstr ""

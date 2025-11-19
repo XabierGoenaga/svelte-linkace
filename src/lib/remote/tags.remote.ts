@@ -31,11 +31,13 @@ export const getTagById = query(TagDTO.GET_BY_ID, async (id) => {
 	return tag;
 });
 
-export const getTagByName = query(TagDTO.GET_BY_NAME, async (name) => {
+export const searchTagByName = query(TagDTO.SEARCH_BY_NAME, async (name) => {
 	const request = getRequestEvent();
 
 	return await db.query.tags.findMany({
 		with: { owner: true },
+		offset: 0,
+		limit: 10,
 		where: (tags, { and, ilike, eq }) =>
 			and(ilike(tags.name, `%${name}%`), eq(tags.userId, request.locals.user.id))
 	});

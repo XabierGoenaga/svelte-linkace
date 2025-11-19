@@ -8,7 +8,7 @@ import {
 	finite,
 	minValue,
 	transform,
-	array
+	fallback
 } from 'valibot';
 
 const GET_BY_ID = pipe(
@@ -23,15 +23,11 @@ const CREATE = object({
 	title: pipe(string()),
 	url: pipe(string(), url()),
 	description: optional(string()),
-	tags: optional(
-		array(
-			pipe(
-				string(),
-				transform((value) => Number(value)),
-				number(),
-				finite(),
-				minValue(1)
-			)
+	tags: fallback(
+		pipe(
+			string(),
+			transform((value) => value.split(',')),
+			transform((values) => values.map((v) => v.trim()).filter((v) => v.length > 0))
 		),
 		[]
 	)

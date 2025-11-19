@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Boundary, PagePagination } from '$lib/component';
-	import { getLinks, getLinksCount, getFavoriteLinks } from '$lib/remote';
+	import { getLinks, getLinksCount } from '$lib/remote';
 	import { onChangeNumber } from '$lib/utils';
 
 	let pagination: PagePagination;
