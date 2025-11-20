@@ -1,10 +1,10 @@
-import { error, redirect } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import { count, eq } from 'drizzle-orm';
 
 import { command, form, getRequestEvent, query } from '$app/server';
 
 import { LinkDTO } from '$lib/dto';
-import { db, links, linksToTags } from '$lib/server';
+import { db, links } from '$lib/server';
 import { getPaginationParams } from '$lib/utils';
 
 export const getLinks = query(async () => {

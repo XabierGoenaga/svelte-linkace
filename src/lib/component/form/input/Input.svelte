@@ -6,7 +6,7 @@
 		fullWidth?: boolean;
 		label?: string;
 		icon?: Component;
-		dropdown?: Snippet;
+		dropdown?: Snippet<[{ id: string }]>;
 		isDropdownOpen?: boolean;
 	} & SvelteHTMLElements['input'];
 
@@ -36,7 +36,7 @@
 		</div>
 
 		{#if data.dropdown}
-			{@render data.dropdown()}
+			{@render data.dropdown({ id })}
 		{/if}
 	</div>
 </div>

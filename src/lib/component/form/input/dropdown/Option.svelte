@@ -1,21 +1,13 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import type { HTMLButtonAttributes } from 'svelte/elements';
 
-	type Props = {
-		children?: Snippet;
-		value: string | number;
-		onclick?: (value: string | number) => void;
-	};
-
-	const { children, value, onclick }: Props = $props();
-
-	function handleClick() {
-		onclick?.(value);
-	}
+	type Props = { children: Snippet } & HTMLButtonAttributes;
+	const { children, onclick }: Props = $props();
 </script>
 
-<button type="button" class="dropdown-item" onclick={handleClick}>
-	{@render children?.()}
+<button type="button" class="dropdown-item" {onclick}>
+	{@render children()}
 </button>
 
 <style>

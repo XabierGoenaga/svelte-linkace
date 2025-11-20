@@ -3,9 +3,19 @@
 	import { createLink, searchTagByName } from '$lib/remote';
 
 	// Search Tags
-	let searchQuery: string = $state('');
-	const searchedList = $derived(searchTagByName(searchQuery));
+	let searchTagsQuery: string = $state('');
+	const searchedTags = $derived(searchTagByName(searchTagsQuery));
+
+	// Add Tags
+	const tags = $state<number[]>([]);
+	const addTag = (id: number) => {
+		if (tags.includes(id)) return;
+
+		tags.push(id);
+	};
 </script>
+
+<pre>{JSON.stringify(tags, null, 2)}</pre>
 
 <Form title="Create Link" novalidate {...createLink}>
 	<Input label="URL" {...createLink.fields.url.as('url')} required />
@@ -15,13 +25,15 @@
 	<Boundary>
 		<Input
 			label="Tags (comma separated)"
-			{...createLink.fields.tags.as('email')}
-			bind:value={searchQuery}
+			{...createLink.fields.tags.as('text')}
+			bind:value={searchTagsQuery}
 		>
-			{#snippet dropdown()}
-				<Input.DropDown.Container>
-					{#each await searchedList as { id, name, owner } (id)}
-						<Input.DropDown.Option value={id}>{owner.name}/{name}</Input.DropDown.Option>
+			{#snippet dropdown({ id })}
+				<Input.DropDown.Container {id}>
+					{#each await searchedTags as { id, name, owner } (id)}
+						<Input.DropDown.Option onclick={() => addTag(id)}>
+							{owner.name}/{name}
+						</Input.DropDown.Option>
 					{/each}
 				</Input.DropDown.Container>
 			{/snippet}

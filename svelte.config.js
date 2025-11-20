@@ -19,7 +19,10 @@ const config = {
 		}
 	},
 	vitePlugin: {
-		inspector: true
+		inspector: {
+			showToggleButton: 'always',
+			toggleButtonPos: 'bottom-right'
+		}
 	}
 };
 
