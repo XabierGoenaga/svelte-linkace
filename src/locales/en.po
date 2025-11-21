@@ -170,6 +170,7 @@ msgid "Links"
 msgstr "Links"
 
 #: src/routes/(app)/+layout.svelte
+#: src/routes/(app)/links/create/+page.svelte
 msgid "Lists"
 msgstr "Lists"
 
@@ -234,6 +235,7 @@ msgstr "Invalid form data"
 #~ msgstr "No tags"
 
 #: src/routes/(app)/links/+page.svelte
+#: src/routes/(app)/links/+page.svelte
 msgid "Etiquetas"
 msgstr "Etiquetas"
 
@@ -241,37 +243,29 @@ msgstr "Etiquetas"
 msgid "Fecha de creación"
 msgstr "Fecha de creación"
 
-#: src/routes/(app)/links/+page.svelte
-msgid "URL A-Z"
-msgstr "URL A-Z"
+#~ msgid "URL A-Z"
+#~ msgstr "URL A-Z"
 
-#: src/routes/(app)/links/+page.svelte
-msgid "URL Z-A"
-msgstr "URL Z-A"
+#~ msgid "URL Z-A"
+#~ msgstr "URL Z-A"
 
-#: src/routes/(app)/links/+page.svelte
-msgid "Titulo A-Z"
-msgstr "Titulo A-Z"
+#~ msgid "Titulo A-Z"
+#~ msgstr "Titulo A-Z"
 
-#: src/routes/(app)/links/+page.svelte
-msgid "Titulo Z-A"
-msgstr "Titulo Z-A"
+#~ msgid "Titulo Z-A"
+#~ msgstr "Titulo Z-A"
 
-#: src/routes/(app)/links/+page.svelte
-msgid "Oldest A-Z"
-msgstr "Oldest A-Z"
+#~ msgid "Oldest A-Z"
+#~ msgstr "Oldest A-Z"
 
-#: src/routes/(app)/links/+page.svelte
-msgid "Newest A-Z"
-msgstr "Newest A-Z"
+#~ msgid "Newest A-Z"
+#~ msgstr "Newest A-Z"
 
-#: src/routes/(app)/links/+page.svelte
-msgid "Offset"
-msgstr "Offset"
+#~ msgid "Offset"
+#~ msgstr "Offset"
 
-#: src/routes/(app)/links/+page.svelte
-msgid "Limit"
-msgstr "Limit"
+#~ msgid "Limit"
+#~ msgstr "Limit"
 
 #: src/routes/(app)/links/+page.svelte
 msgid "No hay links para mostrar."
@@ -322,10 +316,12 @@ msgstr "Search by email"
 #~ msgid "Selecciona el Usuario"
 #~ msgstr "Selecciona el Usuario"
 
+#: src/routes/(app)/links/+page.svelte
 #: src/routes/(app)/lists/+page.svelte
 msgid "Delete"
 msgstr "Delete"
 
+#: src/routes/(app)/links/+page.svelte
 #: src/routes/(app)/lists/+page.svelte
 msgid "Edit"
 msgstr "Edit"
@@ -353,3 +349,22 @@ msgstr "Set Data"
 
 #~ msgid "DropDown Container"
 #~ msgstr "DropDown Container"
+
+#: src/routes/(app)/lists/create/+page.svelte
+msgid "Create List"
+msgstr "Create List"
+
+#~ msgid "sdasdas"
+#~ msgstr "sdasdas"
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Sin etiquetas"
+msgstr "Sin etiquetas"
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Show"
+msgstr "Show"
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Eliminar"
+msgstr "Eliminar"

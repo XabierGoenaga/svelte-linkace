@@ -170,6 +170,7 @@ msgid "Links"
 msgstr ""
 
 #: src/routes/(app)/+layout.svelte
+#: src/routes/(app)/links/create/+page.svelte
 msgid "Lists"
 msgstr ""
 
@@ -234,6 +235,7 @@ msgstr ""
 #~ msgstr ""
 
 #: src/routes/(app)/links/+page.svelte
+#: src/routes/(app)/links/+page.svelte
 msgid "Etiquetas"
 msgstr ""
 
@@ -241,37 +243,29 @@ msgstr ""
 msgid "Fecha de creación"
 msgstr ""
 
-#: src/routes/(app)/links/+page.svelte
-msgid "URL A-Z"
-msgstr ""
+#~ msgid "URL A-Z"
+#~ msgstr ""
 
-#: src/routes/(app)/links/+page.svelte
-msgid "URL Z-A"
-msgstr ""
+#~ msgid "URL Z-A"
+#~ msgstr ""
 
-#: src/routes/(app)/links/+page.svelte
-msgid "Titulo A-Z"
-msgstr ""
+#~ msgid "Titulo A-Z"
+#~ msgstr ""
 
-#: src/routes/(app)/links/+page.svelte
-msgid "Titulo Z-A"
-msgstr ""
+#~ msgid "Titulo Z-A"
+#~ msgstr ""
 
-#: src/routes/(app)/links/+page.svelte
-msgid "Oldest A-Z"
-msgstr ""
+#~ msgid "Oldest A-Z"
+#~ msgstr ""
 
-#: src/routes/(app)/links/+page.svelte
-msgid "Newest A-Z"
-msgstr ""
+#~ msgid "Newest A-Z"
+#~ msgstr ""
 
-#: src/routes/(app)/links/+page.svelte
-msgid "Offset"
-msgstr ""
+#~ msgid "Offset"
+#~ msgstr ""
 
-#: src/routes/(app)/links/+page.svelte
-msgid "Limit"
-msgstr ""
+#~ msgid "Limit"
+#~ msgstr ""
 
 #: src/routes/(app)/links/+page.svelte
 msgid "No hay links para mostrar."
@@ -322,10 +316,12 @@ msgstr ""
 #~ msgid "Selecciona el Usuario"
 #~ msgstr ""
 
+#: src/routes/(app)/links/+page.svelte
 #: src/routes/(app)/lists/+page.svelte
 msgid "Delete"
 msgstr ""
 
+#: src/routes/(app)/links/+page.svelte
 #: src/routes/(app)/lists/+page.svelte
 msgid "Edit"
 msgstr ""
@@ -353,3 +349,22 @@ msgstr ""
 
 #~ msgid "DropDown Container"
 #~ msgstr ""
+
+#: src/routes/(app)/lists/create/+page.svelte
+msgid "Create List"
+msgstr ""
+
+#~ msgid "sdasdas"
+#~ msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Sin etiquetas"
+msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Show"
+msgstr ""
+
+#: src/routes/(app)/links/+page.svelte
+msgid "Eliminar"
+msgstr ""

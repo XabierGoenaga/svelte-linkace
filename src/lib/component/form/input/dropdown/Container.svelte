@@ -108,19 +108,18 @@
 				}
 			}
 		};
+		input.addEventListener('keydown', (event) => keyHandler(event));
+		dropdown.addEventListener('keydown', (event) => keyHandler(event));
 
 		input.addEventListener('focusin', () => focusChangeHandler(input, dropdown));
 		input.addEventListener('focusout', () => focusChangeHandler(input, dropdown));
 
-		input.addEventListener('keydown', (event) => keyHandler(event));
-		dropdown.addEventListener('keydown', (event) => keyHandler(event));
-
 		return () => {
-			input.removeEventListener('focusin', () => focusChangeHandler(input, dropdown));
-			input.removeEventListener('focusout', () => focusChangeHandler(input, dropdown));
-
 			input.removeEventListener('keydown', (event) => keyHandler(event));
 			dropdown.removeEventListener('keydown', (event) => keyHandler(event));
+
+			input.removeEventListener('focusin', () => focusChangeHandler(input, dropdown));
+			input.removeEventListener('focusout', () => focusChangeHandler(input, dropdown));
 		};
 	});
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LinkAceIcon } from '$lib/icon';
+	import { LinkAceIcon, PlusIcon } from '$lib/icon';
 	import type { LayoutProps } from './$types';
 
 	const { children }: LayoutProps = $props();
@@ -11,9 +11,18 @@
 			<a class="navbar-brand" href="https://demo.linkace.org/dashboard">
 				<LinkAceIcon />
 			</a>
-			<a href="/links">Links</a>
-			<a href="/lists">Lists</a>
-			<a href="/tags">Tags</a>
+			<div>
+				<a href="/links">Links</a>
+				<a href="/links/create"><PlusIcon style="width: 1rem; height: 1rem;" /></a>
+			</div>
+			<div>
+				<a href="/lists">Lists</a>
+				<a href="/lists/create"><PlusIcon style="width: 1rem; height: 1rem;" /></a>
+			</div>
+			<div>
+				<a href="/tags">Tags</a>
+				<a href="/tags/create"><PlusIcon style="width: 1rem; height: 1rem;" /></a>
+			</div>
 		</nav>
 
 		<nav>
@@ -58,6 +67,18 @@
 		flex-direction: row;
 		gap: 1rem;
 		align-items: center;
+
+		& div {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 0.2rem;
+
+			& a {
+				display: flex;
+				align-items: center;
+			}
+		}
 	}
 
 	main {

@@ -104,3 +104,21 @@ export const toggleLinkFavorite = command(LinkDTO.TOGGLE_FAVORITE_ID, async (id)
 		})
 		.where(eq(links.id, id));
 });
+
+export const deleteLink = command(LinkDTO.DELETE_ID, async (id) => {
+	const link = await db.query.links.findFirst({
+		where: (links, { eq }) => eq(links.id, id)
+	});
+
+	if (!link) {
+		throw error(404, 'Link not found');
+	}
+
+	await db.delete(links).where(eq(links.id, id));
+
+	await getLinks().refresh();
+	await getLinksCount().refresh();
+
+	await getFavoriteLinks().refresh();
+	await getFavoriteLinksCount().refresh();
+});

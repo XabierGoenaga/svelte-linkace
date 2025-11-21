@@ -35,8 +35,11 @@ const CREATE = object({
 
 const TOGGLE_FAVORITE_ID = pipe(number(), finite(), minValue(1));
 
+const DELETE_ID = pipe(number(), finite(), minValue(1));
+
 export const LinkDTO = {
 	GET_BY_ID,
 	CREATE,
-	TOGGLE_FAVORITE_ID
+	TOGGLE_FAVORITE_ID,
+	DELETE_ID
 };

@@ -10,7 +10,7 @@
 </script>
 
 <form {...createTag}>
-	<Input {...createTag.fields.name.as('text')} label="Tag Name" required />
+	<Input {...createTag.fields.name.as('text')} fullWidth label="Tag Name" required />
 
 	<button type="submit">Create Tag</button>
 </form>

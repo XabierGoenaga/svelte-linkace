@@ -38,6 +38,17 @@ export const getListsById = query(ListDTO.GET_BY_ID, async (id) => {
 	return list;
 });
 
+export const searchListByName = query(ListDTO.GET_BY_NAME, async (name) => {
+	const request = getRequestEvent();
+
+	return await db.query.lists.findMany({
+		offset: 0,
+		limit: 10,
+		where: (lists, { and, ilike, eq }) =>
+			and(ilike(lists.name, `%${name}%`), eq(lists.userId, request.locals.user.id))
+	});
+});
+
 export const createLists = form(ListDTO.CREATE, async (data) => {
 	const { locals } = getRequestEvent();
 

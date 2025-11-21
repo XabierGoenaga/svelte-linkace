@@ -7,11 +7,13 @@
 		label?: string;
 		icon?: Component;
 		dropdown?: Snippet<[{ id: string }]>;
+		// dropdownValues?: string[];
+		dropdownValues?: Snippet;
 		isDropdownOpen?: boolean;
 	} & SvelteHTMLElements['input'];
 
 	let id = $props.id();
-	let { label, value = $bindable(), icon: Icon, isDropdownOpen = false, ...data }: Props = $props();
+	let { label, value = $bindable(), icon: Icon, dropdownValues, ...data }: Props = $props();
 </script>
 
 <div class="input-wrapper" class:full-width={data.fullWidth}>
@@ -25,6 +27,13 @@
 					<Icon />
 				</div>
 			{/if}
+
+			{#if dropdownValues}
+				<div class="input-values-dropdown">
+					{@render dropdownValues()}
+				</div>
+			{/if}
+
 			<input
 				{id}
 				class:full-width={data.fullWidth}
@@ -42,6 +51,20 @@
 </div>
 
 <style>
+	.input-values-dropdown {
+		width: max-content;
+		height: max-content;
+		background-color: red;
+
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 0.25rem;
+		padding: 0.5rem;
+		border-radius: 0.375rem;
+		margin: 0.25rem 0 0.25rem 0.25rem;
+	}
+
 	.input-wrapper {
 		width: min-content;
 		display: flex;
@@ -57,6 +80,8 @@
 	}
 
 	.input-container {
+		position: relative;
+
 		width: min-content;
 		display: flex;
 		align-items: center;
@@ -65,10 +90,21 @@
 		border-radius: 0.375rem;
 
 		& input {
+			width: 100%;
+			min-width: 0;
+			flex: 1 1 0%;
+			height: 100%;
+
 			background-color: #1e293b;
 			padding: 0.5rem 0.75rem;
 			border-radius: 0.375rem;
 			color: white;
+			border: none;
+			box-sizing: border-box;
+		}
+
+		& input:focus {
+			outline: none;
 			border: none;
 		}
 

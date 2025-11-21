@@ -8,7 +8,7 @@
 	let params = useSearchParams(object({ query: optional(string(), '') }), { updateURL: true });
 </script>
 
-<Form {...createLists}>
+<Form title="Create List" {...createLists}>
 	<Input label="Name" {...createLists.fields.name.as('text')} />
 
 	<Input label="Search Email" bind:value={params.query} placeholder="Search by email" />
@@ -20,5 +20,7 @@
 		{/each}
 	</Select.Container>
 
-	<Button type="submit">Create</Button>
+	{#snippet footer()}
+		<Button type="submit">Create</Button>
+	{/snippet}
 </Form>

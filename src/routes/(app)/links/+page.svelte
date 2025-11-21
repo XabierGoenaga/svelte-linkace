@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { Boundary, PagePagination } from '$lib/component';
-	import { getLinks, getLinksCount } from '$lib/remote';
-	import { onChangeNumber } from '$lib/utils';
+	import { deleteLink, getLinks } from '$lib/remote';
+	// import { onChangeNumber } from '$lib/utils';
 
 	let pagination: PagePagination;
 </script>
 
-<PagePagination bind:this={pagination} total={await getLinksCount()} />
+<!-- <PagePagination bind:this={pagination} total={await getLinksCount()} />
 
 <label for="offset">Offset</label>
 <select id="offset" onchange={(e) => (pagination.url.offset = onChangeNumber(e))}>
@@ -20,25 +20,27 @@
 	<option value={10}>10</option>
 	<option value={20}>20</option>
 	<option value={50}>50</option>
-</select>
+</select> -->
 
 <header>
 	<h3>Links</h3>
 
-	<select name="filter" id="filter">
+	<!-- <select name="filter" id="filter">
 		<option value="">Oldest A-Z</option>
 		<option value="">Newest A-Z</option>
 		<option value="">URL A-Z</option>
 		<option value="">URL Z-A</option>
 		<option value="">Titulo A-Z</option>
 		<option value="">Titulo Z-A</option>
-	</select>
+	</select> -->
 </header>
 
 <section class="link-article">
 	<Boundary>
 		{#if (await getLinks()).length === 0}
-			<p>No hay links para mostrar.</p>
+			<div style="margin-left: 1rem">
+				<p>No hay links para mostrar.</p>
+			</div>
 		{/if}
 
 		{#each await getLinks() as { id, title, description, url, favicon, createdAt, linksToTags } (id)}
@@ -55,19 +57,37 @@
 					</div>
 
 					<div role="complementary">
-						<div role="list" aria-label="Etiquetas">
-							{#each linksToTags as { tag } (tag.id)}
-								<span class="tag">{tag.name}</span>
-							{/each}
-						</div>
+						{#if linksToTags.length != 0}
+							<div role="list" aria-label="Etiquetas">
+								{#each linksToTags as { tag } (tag.id)}
+									<a class="tag" href={`/tags/${tag.id}`}>{tag.name}</a>
+								{/each}
+							</div>
+						{:else}
+							<div role="list" aria-label="Etiquetas">
+								<span class="tag">Sin etiquetas</span>
+							</div>
+						{/if}
 
-						<small aria-label="Fecha de creación">
-							Creado: {new Date(createdAt).toLocaleDateString('es-ES', {
-								day: '2-digit',
-								month: '2-digit',
-								year: 'numeric'
-							})}
-						</small>
+						<div class="actions-container">
+							<a href={`/links/${id}`}><small>Show</small></a>
+							<a href={`/links/${id}/edit`}><small>Edit</small></a>
+							<button
+								type="button"
+								class="link-button no-underline"
+								aria-label="Eliminar"
+								on:click={() => deleteLink(id)}
+							>
+								<small>Delete</small>
+							</button>
+							<small aria-label="Fecha de creación">
+								Creado: {new Date(createdAt).toLocaleDateString('es-ES', {
+									day: '2-digit',
+									month: '2-digit',
+									year: 'numeric'
+								})}
+							</small>
+						</div>
 					</div>
 				</div>
 			</article>
@@ -75,7 +95,7 @@
 	</Boundary>
 </section>
 
-<style>
+<style lang="postcss">
 	h3 {
 		font-size: 1.5rem;
 		font-weight: 500;
@@ -129,7 +149,8 @@
 				& div[role='list'] {
 					display: flex;
 					flex-direction: row;
-					padding-top: 0.5rem;
+					justify-content: start;
+					align-items: center;
 					gap: 0.25rem;
 
 					& span {
@@ -141,9 +162,18 @@
 					}
 				}
 
-				& small {
-					color: #64748b;
-					font-size: 0.75rem;
+				& .actions-container {
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					gap: 0.5rem;
+
+					& small {
+						font-size: 0.75rem;
+						color: #a1c6ea;
+						cursor: pointer;
+					}
 				}
 			}
 
@@ -164,6 +194,25 @@
 				font-size: 0.875rem;
 				padding-bottom: 1rem;
 			}
+		}
+	}
+
+	.link-button {
+		background: none;
+		border: none;
+		padding: 0;
+		font: inherit;
+		color: #a1c6ea;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.link-button.no-underline {
+		&:hover {
+			text-decoration: none;
 		}
 	}
 </style>

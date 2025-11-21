@@ -3,10 +3,10 @@
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 
 	type Props = { children: Snippet } & HTMLButtonAttributes;
-	const { children, onclick }: Props = $props();
+	const { children, onclick, ...restProps }: Props = $props();
 </script>
 
-<button type="button" class="dropdown-item" {onclick}>
+<button type="button" class="dropdown-item" {onclick} {...restProps}>
 	{@render children()}
 </button>
 
