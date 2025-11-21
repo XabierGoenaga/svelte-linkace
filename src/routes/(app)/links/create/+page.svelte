@@ -38,33 +38,9 @@
 	<Input fullWidth label="Description" {...createLink.fields.description.as('text')} />
 
 	<Boundary>
-		<Input
-			{...createLink.fields.tags.as('text')}
-			fullWidth
-			label="Tags (comma separated)"
-			bind:value={queryTags}
-		>
-			{#snippet dropdown({ id })}
-				<Input.DropDown.Container {id}>
-					{#each await tagsData as { id, name, owner } (id)}
-						<Input.DropDown.Option onclick={() => handleTagClick(id)}>
-							{owner.name}/{name}
-						</Input.DropDown.Option>
-					{/each}
-				</Input.DropDown.Container>
-			{/snippet}
-
-			{#snippet dropdownValues()}
-				{#each selectedTagsIds as id}
-					{@const tag = (await tagsData).find((t) => t.id === id)}
-					{#if tag}
-						<Input.DropDown.Value>
-							{tag.name}
-						</Input.DropDown.Value>
-					{/if}
-				{/each}
-			{/snippet}
-		</Input>
+		<Input.DropDown>
+			<Input.DropDown.Option />
+		</Input.DropDown>
 	</Boundary>
 
 	<Boundary>
