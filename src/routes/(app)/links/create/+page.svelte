@@ -33,46 +33,25 @@
 </script>
 
 <Form title="Create Link" novalidate {...createLink}>
-	<Input fullWidth label="URL" {...createLink.fields.url.as('url')} required />
-	<Input fullWidth label="Title" {...createLink.fields.title.as('text')} required />
-	<Input fullWidth label="Description" {...createLink.fields.description.as('text')} />
+	<Input icon={LockIcon} fullWidth label="URL" {...createLink.fields.url.as('url')} required />
+	<Input icon={LockIcon} fullWidth label="Title" {...createLink.fields.title.as('text')} required />
+	<Input
+		icon={LockIcon}
+		fullWidth
+		label="Description"
+		{...createLink.fields.description.as('text')}
+	/>
 
 	<Boundary>
 		<Input.DropDown>
-			<Input.DropDown.Option />
+			{#snippet select()}
+				<Input.DropDown.Option />
+			{/snippet}
+
+			{#snippet value()}
+				<Input.DropDown.Value />
+			{/snippet}
 		</Input.DropDown>
-	</Boundary>
-
-	<Boundary>
-		<Input
-			{...createLink.fields.tags.as('text')}
-			fullWidth
-			label="Lists"
-			bind:value={queryLists}
-			icon={LockIcon}
-		>
-			{#snippet dropdown({ id })}
-				<Input.DropDown.Container {id}>
-					{#each await listsData as { id, name } (id)}
-						<Input.DropDown.Option onclick={() => handleListClick(id)}>
-							{name}
-							<!-- {owner.name}/{name} -->
-						</Input.DropDown.Option>
-					{/each}
-				</Input.DropDown.Container>
-			{/snippet}
-
-			{#snippet dropdownValues()}
-				{#each selectedListsIds as id}
-					{#if list}
-						<Input.DropDown.Value>
-							{@const list = (await listsData).find((l) => l.id === id)}
-							{list.name}
-						</Input.DropDown.Value>
-					{/if}
-				{/each}
-			{/snippet}
-		</Input>
 	</Boundary>
 
 	{#snippet footer()}

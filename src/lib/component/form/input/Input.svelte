@@ -28,12 +28,6 @@
 				</div>
 			{/if}
 
-			{#if dropdownValues}
-				<div class="input-values-dropdown">
-					{@render dropdownValues()}
-				</div>
-			{/if}
-
 			<input
 				{id}
 				class:full-width={data.fullWidth}
@@ -43,28 +37,10 @@
 				{...data}
 			/>
 		</div>
-
-		{#if data.dropdown}
-			{@render data.dropdown({ id })}
-		{/if}
 	</div>
 </div>
 
 <style>
-	.input-values-dropdown {
-		width: max-content;
-		height: max-content;
-		background-color: red;
-
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		gap: 0.25rem;
-		padding: 0.5rem;
-		border-radius: 0.375rem;
-		margin: 0.25rem 0 0.25rem 0.25rem;
-	}
-
 	.input-wrapper {
 		width: min-content;
 		display: flex;
